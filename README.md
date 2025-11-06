@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dev Sharma - AI Application Developer Portfolio
 
-## Getting Started
+**[Live Demo](YOUR_VERCEL_URL_HERE)** | **[LinkedIn](https://www.linkedin.com/in/dev-sharma-aegis/)** | **[GitHub](https://github.com/AegisX-dev)**
 
-First, run the development server:
+This repository contains the code for my personal portfolio, built to showcase my skills as a "Full-Stack AI Orchestrator."
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Project Goal & Philosophy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This portfolio was built with a single, clear objective: to pass a recruiter's "6-second test."
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The entire architecture and design are "Recruiter-Optimized," prioritizing:
 
-## Learn More
+- **Speed:** Built as a Static Site (SSG) with Next.js for instant-on loading.
+- **Clarity:** An "above-the-fold" Hero section that immediately states who I am and what I do.
+- **Proof:** Key projects and resume data are presented clearly, corroborating my "AI Orchestrator" narrative from my resume.
+- **Minimalism:** A "Minimalist/Dark" theme that is professional, clean, and avoids all feature-creep (like light/dark toggles).
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack & Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project demonstrates a clean, modern, and production-ready frontend architecture.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework:** Next.js 14+ (App Router)
+- **Deployment:** Vercel
+- **Architecture:** Static Site Generation (SSG)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Fonts:** `next/font` (Inter)
+- **Icons:** `react-icons`
 
-## Deploy on Vercel
+## 🚀 Running Locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Clone the repository:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ```bash
+    git clone [https://github.com/AegisX-dev/dev-sharma-portfolio.git](https://github.com/AegisX-dev/dev-sharma-portfolio.git)
+    cd dev-sharma-portfolio
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
