@@ -12,6 +12,7 @@ const projects = [
     tags: ["Next.js", "MongoDB", "TypeScript", "Next-Auth", "Gemini", "OpenRouter"],
     demoUrl: "https://prompt-craft-beryl.vercel.app/",
     githubUrl: "https://github.com/AegisX-dev/PromptCraft",
+    caseStudyUrl: "https://ai-orchestrator.hashnode.dev/how-i-built-a-smart-ai-prompt-refiner-on-a-0-budget-nextjs-gemini-and-a-dual-ai-router",
   },
   {
     title: "VibeScribe",

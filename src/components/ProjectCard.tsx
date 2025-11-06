@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import { HiOutlineDocumentText } from "react-icons/hi";
 
 interface ProjectCardProps {
   title: string;
@@ -8,9 +9,10 @@ interface ProjectCardProps {
   tags: string[];
   demoUrl: string;
   githubUrl: string;
+  caseStudyUrl?: string;
 }
 
-const ProjectCard = ({ title, description, tags, demoUrl, githubUrl }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, tags, demoUrl, githubUrl, caseStudyUrl }: ProjectCardProps) => {
   return (
     <div className="bg-gray-900 rounded-lg border border-gray-700 p-6 hover:border-gray-500 hover:shadow-lg hover:shadow-gray-800/50 transition-all duration-300 hover:-translate-y-1">
       <h3 className="text-2xl font-semibold text-gray-100">{title}</h3>
@@ -25,7 +27,7 @@ const ProjectCard = ({ title, description, tags, demoUrl, githubUrl }: ProjectCa
           </span>
         ))}
       </div>
-      <div className="mt-6 flex items-center space-x-6">
+      <div className="mt-6 flex items-center space-x-6 flex-wrap gap-y-3">
         <Link
           href={demoUrl}
           target="_blank"
@@ -44,6 +46,17 @@ const ProjectCard = ({ title, description, tags, demoUrl, githubUrl }: ProjectCa
           <FaGithub size={20} />
           <span>View Code</span>
         </Link>
+        {caseStudyUrl && (
+          <Link
+            href={caseStudyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 text-gray-300 hover:text-white transition-all duration-200 hover:scale-110"
+          >
+            <HiOutlineDocumentText size={20} />
+            <span>Case Study</span>
+          </Link>
+        )}
       </div>
     </div>
   );
