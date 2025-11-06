@@ -1,6 +1,6 @@
 # Dev Sharma - AI Application Developer Portfolio
 
-**[Live Demo](YOUR_VERCEL_URL_HERE)** | **[LinkedIn](https://www.linkedin.com/in/dev-sharma-aegis/)** | **[GitHub](https://github.com/AegisX-dev)**
+**[Live Demo](https://dev-sharma-portfolio.vercel.app/)** | **[LinkedIn](https://www.linkedin.com/in/dev-sharma-aegis/)** | **[GitHub](https://github.com/AegisX-dev)**
 
 This repository contains the code for my personal portfolio, built to showcase my skills as a "Full-Stack AI Orchestrator."
 
