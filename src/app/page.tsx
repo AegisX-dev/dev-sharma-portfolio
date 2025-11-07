@@ -16,10 +16,11 @@ const projects = [
   },
   {
     title: "VibeScribe",
-    description: "Developed and demoed an AI content partner for a buildathon, transforming unstructured notes into context-aware social media content. Built with Next.js, TypeScript, and Tailwind CSS.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "OpenRouter", "LLM"],
+    description: "Upgraded the AI core to Gemini 2.5 Flash and added deep personalization with Supabase, allowing the AI to learn and adopt a user's unique brand voice from their writing style. Now a full-stack app with profile management and database integration.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini 2.5", "Supabase", "PostgreSQL"],
     demoUrl: "https://vibe-scribe.vercel.app/",
     githubUrl: "https://github.com/AegisX-dev/VibeScribe",
+    caseStudyUrl: "https://ai-orchestrator.hashnode.dev/from-ai-tool-to-ai-partner-re-architecting-vibescribe-for-deep-personalization",
   },
 ];
 
