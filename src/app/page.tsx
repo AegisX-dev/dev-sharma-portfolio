@@ -175,7 +175,7 @@ export default function Home() {
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-5xl font-bold">Dev Sharma</h1>
               <h2 className="text-2xl text-gray-300 mt-2">
-                AI Application Developer & Full-Stack &apos;AI Orchestrator&apos;
+                Certified Prompt Engineer & AI Orchestrator (MERN/NEXT.js)
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-gray-400">
                 Core expertise in architecting and building AI-powered apps from the
