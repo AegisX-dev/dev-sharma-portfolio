@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 interface CertificationCardProps {
@@ -13,6 +14,7 @@ interface CertificationCardProps {
   certificateNo?: string;
   description?: string;
   imageUrl?: string;
+  imageUrls?: string[];
 }
 
 export default function CertificationCard({
@@ -25,14 +27,29 @@ export default function CertificationCard({
   certificateNo,
   description,
   imageUrl,
+  imageUrls,
 }: CertificationCardProps) {
   const [showImage, setShowImage] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = imageUrls || (imageUrl ? [imageUrl] : []);
+  const hasMultipleImages = images.length > 1;
+  
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+  
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
     <>
       <div
         className="bg-gray-900 border border-gray-700 rounded-lg p-6 hover:border-gray-500 hover:shadow-lg hover:shadow-gray-800/50 transition-all duration-300 relative cursor-pointer"
-        onClick={() => imageUrl && setShowImage(!showImage)}
+        onClick={() => images.length > 0 && setShowImage(!showImage)}
       >
         <div className="flex flex-col md:flex-row justify-between md:items-start mb-3">
           <div className="flex-1">
@@ -72,17 +89,17 @@ export default function CertificationCard({
             ))}
           </div>
         )}
-        {imageUrl && (
+        {images.length > 0 && (
           <div className="mt-3 text-xs text-gray-500 italic">
-            Click to view certificate
+            {hasMultipleImages ? `Click to view ${images.length} certificates` : 'Click to view certificate'}
           </div>
         )}
       </div>
 
       {/* Certificate Preview Modal */}
-      {showImage && imageUrl && (
+      {showImage && images.length > 0 && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setShowImage(false)}
         >
           <div className="relative max-w-5xl w-full mx-4 animate-in zoom-in-95 duration-300">
@@ -95,15 +112,37 @@ export default function CertificationCard({
             </button>
             <div className="bg-gray-900 rounded-lg p-4 border-2 border-gray-600 shadow-2xl">
               <Image
-                src={imageUrl}
-                alt={`${title} Certificate`}
+                src={images[currentImageIndex]}
+                alt={`${title} Certificate ${hasMultipleImages ? `${currentImageIndex + 1}/${images.length}` : ''}`}
                 width={1200}
                 height={800}
                 className="w-full h-auto rounded"
               />
+              {hasMultipleImages && (
+                <div className="flex items-center justify-between mt-4">
+                  <button
+                    onClick={prevImage}
+                    className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200 font-medium"
+                    aria-label="Previous certificate"
+                  >
+                    ← Previous
+                  </button>
+                  <span className="text-gray-300 text-sm font-medium">
+                    {currentImageIndex + 1} / {images.length}
+                  </span>
+                  <button
+                    onClick={nextImage}
+                    className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200 font-medium"
+                    aria-label="Next certificate"
+                  >
+                    Next →
+                  </button>
+                </div>
+              )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

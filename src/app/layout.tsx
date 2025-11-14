@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
 import Footer from '@/components/Footer';
+import BottomText from '@/components/BottomText';
 
 const momoTrust = localFont({
   src: './../../public/fonts/MomoTrustDisplay-Regular.ttf',
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${momoTrust.className} antialiased bg-black text-gray-100`}>
         {children}
+        <BottomText text="Dev Sharma" />
         <Footer />
       </body>
     </html>
